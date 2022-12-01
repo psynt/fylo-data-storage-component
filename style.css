@@ -1,0 +1,149 @@
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+:root {
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+    --gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    place-content: center;
+    background-color: var(--very-dark-blue);
+    background-image: url("images/bg-desktop.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    color: var(--grayish-blue);
+}
+
+main {
+    display: grid;
+    grid-template-areas:
+        "left none quote"
+        "left right right";
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    /* grid-template-rows: 1fr 1fr; */
+    gap: 2rem;
+    margin: auto;
+}
+
+.left {
+    grid-area: left;
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    padding: 3rem;
+    padding-right: 8rem;
+    background-color: var(--dark-blue);
+    border-radius: 1rem;
+    border-top-right-radius: 8rem;
+}
+
+.icons {
+    display: flex;
+    gap: 1rem;
+    margin: .5rem;
+}
+
+.icon {
+    padding: .8rem;
+    background-color: var(--very-dark-blue);
+    object-fit: contain;
+    border-radius: .5rem;
+}
+
+/* .right {
+    padding: 2rem;
+    align-self: bottom;
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+} */
+
+.bottomright {
+    grid-area: right;
+    background-color: var(--dark-blue);
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+}
+
+.details {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+#progress {
+    height: 1rem;
+    width: 100%;
+    color: var(--gradient);
+    background: var(--very-dark-blue);
+    border-radius: 1rem;
+    appearance: none
+}
+
+
+#progress::-webkit-progress-bar {
+    background: var(--very-dark-blue);
+    border-radius: 1rem;
+}
+
+#progress::-webkit-progress-value {
+    background: var(--gradient);
+    border-radius: 1rem;
+}
+
+#progress::-webkit-progress-value::after {
+    background-color: var(--pale-blue);
+    padding: .4rem;
+}
+
+#progress::-moz-progress-bar {
+    background: var(--gradient);
+    border-radius: 1rem;
+}
+
+.dot {
+    position: absolute;
+    background-color: var(--pale-blue);
+    padding: .4rem;
+    margin-top: -1rem;
+    margin-left: 12.3rem;
+    border-radius: 1rem;
+}
+
+.highlight {
+    color: var(--pale-blue);
+    font-weight: 700;
+}
+
+.super {
+    font-weight: 700;
+    font-size: xx-large;
+}
+
+.quote {
+    grid-area: quote;
+    background-color: var(--pale-blue);
+    color: var(--very-dark-blue);
+    padding: .5rem 1.1rem;
+    border-radius: .6rem;
+    border-bottom-right-radius: 0;
+    /* position: absolute; */
+    /* margin-bottom: 5rem; */
+}
