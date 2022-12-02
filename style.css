@@ -30,12 +30,7 @@ body {
 }
 
 main {
-    display: grid;
-    grid-template-areas:
-        "left none quote"
-        "left right right";
-    /* grid-template-columns: 1fr 1fr 1fr; */
-    /* grid-template-rows: 1fr 1fr; */
+    display: flex;
     gap: 2rem;
     margin: auto;
 }
@@ -65,27 +60,62 @@ main {
     border-radius: .5rem;
 }
 
-/* .right {
+.right {
     padding: 2rem;
     align-self: bottom;
     justify-self: end;
     display: flex;
+    gap: 1rem;
     flex-direction: column;
-} */
-
-.bottomright {
-    grid-area: right;
     background-color: var(--dark-blue);
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
     border-radius: 1rem;
+    justify-items: flex-end;
+    min-width: 34rem;
+    margin-top: 4rem;
+}
+
+.quote {
+    grid-area: quote;
+    position: absolute;
+    background-color: white;
+    color: var(--very-dark-blue);
+    padding: .8rem 1.1rem;
+    border-radius: .6rem;
+    border-bottom-right-radius: 0;
+    position: absolute;
+    right: 11rem;
+    margin-top: -4rem;
+}
+
+.quote:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-width: 0 20px 20px 0;
+    border-color: transparent white transparent transparent;
+    left: 7.95rem;
+    top: 3.9rem;
+}
+
+.text {
+    padding-top: 1rem;
 }
 
 .details {
     display: flex;
     flex-direction: row;
     gap: 2rem;
+}
+
+.space {
+    display: flex;
+}
+
+.end {
+    margin-left: auto;
 }
 
 #progress {
@@ -122,8 +152,8 @@ main {
     position: absolute;
     background-color: var(--pale-blue);
     padding: .4rem;
-    margin-top: -1rem;
-    margin-left: 12.3rem;
+    margin-top: -.975rem;
+    margin-left: 26.8rem;
     border-radius: 1rem;
 }
 
@@ -137,13 +167,57 @@ main {
     font-size: xx-large;
 }
 
-.quote {
-    grid-area: quote;
-    background-color: var(--pale-blue);
-    color: var(--very-dark-blue);
-    padding: .5rem 1.1rem;
-    border-radius: .6rem;
-    border-bottom-right-radius: 0;
-    /* position: absolute; */
-    /* margin-bottom: 5rem; */
+
+@media (max-width: 375px) {
+
+    body {
+        padding: 0;
+        margin: 0;
+        background-image: url(images/bg-mobile.png);
+    }
+
+    main {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+        min-width: auto;
+        min-height: auto;
+    }
+
+    .left {
+        margin: 0;
+        padding: 2rem;
+    }
+
+    .right {
+        max-width: 280px;
+        min-width: 280px;
+        margin: 0;
+    }
+
+    .dot {
+        margin: 0;
+        margin-top: -1rem;
+        margin-left: 13.35rem;
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+
+    .quote {
+        padding: 1.3rem;
+        border-radius: .6rem;
+        margin-top: 6.4rem;
+        margin-right: -3.5rem;
+    }
+
+    .quote::after {
+        display: none;
+    }
+
+    .attribution {
+        margin-top: 4rem;
+    }
 }
