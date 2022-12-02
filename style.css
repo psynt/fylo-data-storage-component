@@ -83,7 +83,7 @@ main {
     border-radius: .6rem;
     border-bottom-right-radius: 0;
     position: absolute;
-    right: 11rem;
+    margin-left: 25rem;
     margin-top: -4rem;
 }
 
